@@ -117,6 +117,7 @@ document.getElementById('player').addEventListener("touchend", tapOrClick, false
 document.getElementById('audiomucis').addEventListener("touchend", tapOrClick, false);
 
 function tapOrClick(e) {
+    var context = new AudioContext();
     var mp3 = e.target;
     context.resume().then(() => {
       mp3.parentNode.getElementsByTagName('audio')[0].play();
