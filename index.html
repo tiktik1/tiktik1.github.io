@@ -102,7 +102,7 @@ body{
     <h1 class="bday">Atikah Alkaff </h1>
   </div>
 </div>
-<iframe src="cutmusic.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+<iframe src="cutmusic.mp3" allow="autoplay" id="audiomucis" style="display: none"></iframe>
 <audio id="player" autoplay loop>
   <source src="cutmusic.mp3" type="audio/mpeg">
 </audio>
@@ -110,10 +110,12 @@ body{
 </html>
 
 <script>
-  var myadido = document.getElementById("player");
+  var myadido1 = document.getElementById("player");
+  var myadido2 = document.getElementById("audiomucis");
 
   setTimeout(function() {
-  myadido.play();
+  myadido1.play();
+  myadido2.play();
 
   },500);
 const TwoPI = Math.PI * 2;
