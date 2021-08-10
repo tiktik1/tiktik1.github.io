@@ -118,6 +118,14 @@ var center_y = h / 2;
 
 var colors = ['#FF0000', '#E8D45B', '#8CFF00']
 
+  var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+  if (!isChrome){
+      $('#audioframe').remove()
+  }
+  else {
+      $('#playeraudio').remove() // just to make sure that it will not have 2x audio in the background 
+  }
+
 // I know the abs is not needed... but oh well
 var max_distance = Math.abs(Math.max(center_x, center_y));
 var min_distance = Math.abs(Math.min(center_x, center_y));
@@ -204,14 +212,6 @@ function render(){
   }
   
   requestAnimationFrame(render);
-
-  var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-  if (!isChrome){
-      $('#audioframe').remove()
-  }
-  else {
-      $('#playeraudio').remove() // just to make sure that it will not have 2x audio in the background 
-  }
 }
 
 
