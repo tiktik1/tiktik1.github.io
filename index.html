@@ -99,13 +99,13 @@ body{
       <h2 class="twenty-one block"><div class="inline-blocks"></div>
       <h1 class="bday">Happy Birthday Lovely </h1>
       <!-- <h1 class="bday">Atikah Alkaff </h1> -->
+      <iframe src="cutmusic.mp3" allow="autoplay" id="audiomucis" style="display: none"></iframe>
+      <audio id="player" autoplay loop>
+        <source src="cutmusic.mp3" type="audio/mpeg">
+      </audio>
     </div>
   </div>
 </div>
-<iframe src="cutmusic.mp3" allow="autoplay" id="audiomucis" style="display: none"></iframe>
-<audio id="player" autoplay loop>
-  <source src="cutmusic.mp3" type="audio/mpeg">
-</audio>
 </body>
 </html>
 
@@ -118,7 +118,10 @@ document.getElementById('audiomucis').addEventListener("touchend", tapOrClick, f
 
 function tapOrClick(e) {
     var mp3 = e.target;
-        mp3.parentNode.getElementsByTagName('audio')[0].play();
+    context.resume().then(() => {
+      mp3.parentNode.getElementsByTagName('audio')[0].play();
+      console.log('Playback resumed successfully');
+    });
 }
 
 const TwoPI = Math.PI * 2;
