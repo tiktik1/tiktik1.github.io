@@ -104,12 +104,18 @@ body{
 </div>
 <iframe src="cutmusic.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
 <audio id="player" autoplay loop>
-  <source src="cutmusic.mp3" type="audio/mp3">
+  <source src="cutmusic.mp3" type="audio/mpeg">
 </audio>
 </body>
 </html>
 
 <script>
+  var myadido = document.getElementById("player");
+
+  setTimeout(function() {
+  myadido.play();
+
+  },500);
 const TwoPI = Math.PI * 2;
 var w = window.innerWidth;
 var h = window.innerHeight;
