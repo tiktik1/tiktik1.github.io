@@ -102,8 +102,8 @@ body{
     <h1 class="bday">Atikah Alkaff </h1>
   </div>
 </div>
-<iframe src="cutmusic.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
-<audio id="player" autoplay loop>
+<iframe src="cutmusic.mp3" allow="autoplay" id="audioframe" style="display: none"></iframe>
+<audio id="playeraudio" autoplay loop>
   <source src="cutmusic.mp3" type="audio/mp3">
 </audio>
 </body>
@@ -204,6 +204,14 @@ function render(){
   }
   
   requestAnimationFrame(render);
+
+  var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+  if (!isChrome){
+      $('#audioframe').remove()
+  }
+  else {
+      $('#playeraudio').remove() // just to make sure that it will not have 2x audio in the background 
+  }
 }
 
 
